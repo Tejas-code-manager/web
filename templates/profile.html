@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<div class="mt-3 container">
+    <a href="/dashboard" class="btn btn-primary btn-sm"><i class="fa fa-arrow-left"></i> Back</a>
+</div>
+
+<div class="container mt-5">
+
+    <div class="col-sm-12 col-lg-6 mx-auto mt-4" >
+      <!--<h2 class="mb-4">Profile</h2>-->
+      <form class="needs-validation " action="/profile" method="POST" >
+          <div class="mt-4">
+           <label>Fullname <span class="text-danger">*</span></label>
+           <input type="fullname" class="form-control" name="name" value="{{det[0][1]}}" required/>
+           </div>
+
+          <div class="mt-4">
+           <label>Email</label>
+           <input type="email"  class="form-control" name="email" value="{{det[0][2]}}" disabled required/>
+          </div>
+
+          <div class="mt-4">
+              <label>Contact number <span class="text-danger">*</span></label>
+           <input type="tel" class="form-control" name="phone" value="{{det[0][3]}}" required/>
+          </div>
+
+          <div class="mt-4">
+           <label>Address <span class="text-danger">*</span></label>
+              <input type="text" class="form-control" name="address" value="{{det[0][4]}}" required/>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-lg btn-block mt-4">Update details</button>
+
+      </form>
+    </div>
+ </div>
+{% endblock %}
